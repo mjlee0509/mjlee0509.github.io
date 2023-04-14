@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script>scr="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2"</script>
+    <style>
+
+        /*둥근고딕(제목폰트)*/
+        @font-face {
+            font-family: 'NeoDunggeunmoPro-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /*둥근모(양식폰트)*/
+        @font-face {
+            font-family: 'NeoDunggeunmo';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.3/NeoDunggeunmo.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            background-image: url("./image/배경화면.jpg");
+        }
+
+        #member-form {
+            width: 500px;
+            height: auto;
+            background-color: rgb(255, 255, 255);
+            margin-top: 100px;
+            margin-bottom: 50px;
+            padding : 10px 30px 10px;
+            border-radius: 10px;    
+        }
+
+        #page-name {
+            font-family: "NeoDunggeunmoPro-Regular";
+            text-align: center;
+            margin-left: 0px;
+            margin-bottom: 40px;
+            
+        }
+
+        label {
+            font-family: "NeoDunggeunmoPro-Regular";
+        }
+
+        input {
+            font-family: 'NeoDunggeunmo';
+        }
+
+        #golbaeng {
+            text-align: center;
+            padding: 5px;
+        }
+
+        #address_top {
+            position: relative;
+        }
+
+        #address_top i {
+            position: absolute;
+            background-color: rgb(228, 158, 228);
+            border-radius: 5px;
+            text-align: center;
+            height: 38px;
+            padding: 7px;
+            cursor: pointer;
+            right: 5px;
+        }
+
+        #address_top i:hover {
+            background-color: rgba(228, 158, 228, 0.548);
+        }
+
+        #submit_button {
+            font-family: "NeoDunggeunmoPro-Regular";
+        }
+
+    </style>
+</head>
+<body>
+    <div id="member-form" class="container">
+        <div id="page-name" class="container mt-5">
+            <h1>회원가입</h1>
+        </div>
+    <!--아이디-->
+        <label for="member-user-name">
+            <h6>ID</h6>
+        </label>
+        <input type="text" id="member-user-name" name="memberUserName" class="form-control" onblur="member_user_name()" placeholder="사용하실 ID를 입력하세요">
+        <h6 id="user-name-warning"></h6>
+    
+        <!--비밀번호-->
+        <label for="member-password">
+            <h6>비밀번호</h6>
+        </label>
+        <input type="password" id="member-password" name="memberPassword" class="form-control" onblur="member_password()" placeholder="영문(대/소문자), 숫자, 특수문자를 포함하여 6~18자">
+        <h6 id="password-warning"></h6>
+    
+        <!--비밀번호 확인-->
+        <label for="member-password-check">
+            <h6>비밀번호 확인</h6>
+        </label>
+        <input type="password" id="member-password-check" name="memberPasswordCheck" class="form-control" onblur="member_password_check()" placeholder="비밀번호 입력">
+        <h6 id="password-check-warning"></h6>
+    
+        <!--이름-->
+        <label for="member-name">
+            <h6>이름</h6>
+        </label>
+        <input type="text" id="member-name" name="memberName" class="form-control" onblur="member_name()" placeholder="성/이름">
+        <h6 id="name-warning"></h6>
+    
+        <!--전화번호-->
+        <label for="member-mobile">
+            <h6>전화번호</h6>
+        </label>
+        <div class="row g-2">
+            <div class="col-3">
+                <select id="member-mobile-select" class="form-select" onblur="member_mobile_select()">
+                    <option value="">선택</option>
+                    <option value="SKT">SKT</option>
+                    <option value="KT">LG</option>
+                    <option value="LG">KT</option>
+                    <option value="MVNO">MVNO</option>
+                </select>
+            <h6 id="mobile-telecom-warning"></h6>
+            </div>
+            <div class="col-9">
+                <input type="text" id="member-mobile" name="memberMobile" class="form-control" placeholder="000-0000-0000" onblur="member_mobile()">
+            </div>
+            <h6 id="mobile-select-warning"></h6>
+        </div>
+    
+        <!--이메일-->
+        <label for="member-email">
+            <h6>이메일</h6>
+        </label>
+        <div class="row g-4">
+            <div class="col-4">
+                <input type="text" id="member-email" name="memberEmail" class="form-control">
+                <h6 id="email-warning"></h6>
+            </div>
+            <div id="golbaeng" class="col-1">
+                @
+            </div>
+            <div class="col-4">
+                <input type="text" id="member-domain" name="memberDomain" class="form-control">
+            </div>
+            <div class="col-3">
+                <select id="member-domain-select" class="form-select" onchange="member_domain()">
+                    <option value="">직접입력</option>
+                    <option value="naver.com">네이버</option>
+                    <option value="gmail.com">구글</option>
+                    <option value="daum.net">다음</option>
+                </select>
+            </div>
+        </div>
+
+        <!--성별-->
+        <br>
+        <label for="member-gender"><h6>성별</h6></label> <br>
+        남 : <input type="radio" id="member-gender"name="memberGender" value="M" class="form-check-input">
+        여 : <input type="radio" id="member-gender" name="memberGender" value="F" class="form-check-input">
+
+        <!--주소-->
+        <br><br>
+        <label for="member-address"><h6>주소</h6></label>
+        <div id="member-address" class="row g-2">
+            <div id="address_top" class="col-12 d-grid">
+                <input type="text" id="sample6_postcode" placeholder="우편번호" class="form-control" disabled>
+                <i class="bi bi-search col-2" onclick="sample6_execDaumPostcode()"></i>
+            </div>
+            <div class="col-2 d-grid">
+                <!-- <input type="button" class="btn bi bi-search" style="background-color: rgba(248, 219, 165, 0.719);"
+                                    onclick="sample6_execDaumPostcode()" value="우편번호 찾기"> -->
+            </div>
+            <input type="text" id="sample6_address" placeholder="주소" class="form-control">
+            <input type="text" id="sample6_detailAddress" placeholder="상세주소" class="form-control">
+            <input type="text" id="sample6_extraAddress" placeholder="참고항목" class="form-control">
+        </div>
+
+        <!--가입버튼-->
+        <div id="submit_button" class="col d-grid">
+            <br>
+            <input type="submit" class="btn mb-3" style="background-color: rgb(109, 1, 211); color: white;" value="가입하기">
+            <!-- <i class="bi bi-search"></i> -->
+        </div>
+
+    </div>    
+</body>
+<script>
+    const member_user_name = () => {
+        const memberUserName = document.getElementById("member-user-name").value
+        const userNameWarning = document.getElementById("user-name-warning")
+        const expUserName = /^(?=.*[a-z])(?=.*\d)(?=.*[-_])[a-z\d-_]{5,10}$/
+        if (memberUserName.length == 0) {
+            userNameWarning.innerHTML = "필수입력입니다"
+            userNameWarning.style.color = "red"
+        } else if (!memberUserName.match(expUserName)) {
+            userNameWarning.innerHTML = "사용할 수 없는 이름입니다."
+            userNameWarning.style.color = "red"
+        } else if (memberUserName.match(expUserName)){
+            userNameWarning.innerHTML = "멋진 이름이네요🤗"
+            userNameWarning.style.color = "green"
+        }
+    }
+    const member_password = () => {
+        const memberPassword = document.getElementById("member-password").value
+        const passwordWarning = document.getElementById("password-warning")
+        const expPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_!#])[A-Za-z\d!#$-_]{6,18}$/
+        if (memberPassword.length == 0) {
+            passwordWarning.innerHTML = "필수입력입니다"
+            passwordWarning.style.color = "red"
+        } else if (!memberPassword.match(expPassword)) {
+            passwordWarning.innerHTML = "영문(대/소문자), 숫자, 특수문자를 포함하여 6~18자 이내"
+            passwordWarning.style.color = "red"
+        } else if (memberPassword.match(expPassword)){
+            passwordWarning.innerHTML = "안전한 비밀번호입니다🔐"
+            passwordWarning.style.color = "green"
+        }
+    }
+    const member_password_check = () => {
+        const memberPassword = document.getElementById("member-password").value
+        const memberPasswordCheck = document.getElementById("member-password-check").value
+        const passwordCheckWarning = document.getElementById("password-check-warning")
+        if (memberPassword.length == 0) {
+            passwordCheckWarning.innerHTML = "필수입력입니다"
+            passwordCheckWarning.style.color = "red"
+        } else if (memberPassword != memberPasswordCheck) {
+            passwordCheckWarning.innerHTML = "입력하신 비밀번호와 일치하지 않습니다."
+            passwordCheckWarning.style.color = "red"
+        } else if (memberPassword == memberPasswordCheck) {
+            passwordCheckWarning.innerHTML = "입력하신 비밀번호와 일치합니다✅"
+            passwordCheckWarning.style.color = "green"
+        }
+    }
+    const member_name = () => {
+        const memberName = document.getElementById("member-name").value
+        const nameWarning = document.getElementById("name-warning")
+        if (memberName.length == 0) {
+            nameWarning.innerHTML = "필수입력입니다"
+            nameWarning.style.color="red"
+        } else {
+            nameWarning.innerHTML = ""
+        }
+    }
+    const member_mobile_select = () => {
+        memberMobileSelect = document.getElementById("member-mobile-select").value
+        console.log(memberMobileSelect)
+        mobileSelectWarning = document.getElementById("mobile-telecom-warning")
+        if (memberMobileSelect.length == 0) {
+            mobileSelectWarning.innerHTML = "통신사 선택"
+            mobileSelectWarning.style.color="red"
+        } else {
+            mobileSelectWarning.innerHTML = ""
+        }
+    }
+
+    const member_mobile = () => {
+        const memberMobile = document.getElementById("member-mobile").value
+        const mobileWarning = document.getElementById("mobile-select-warning")
+        const expMobile = /^\d{3}-\d{4}-\d{4}$/
+        if (!memberMobile.match(expMobile)) {
+            mobileWarning.innerHTML = "입력 양식을 확인하세요 (000-0000-0000)"
+            mobileWarning.style.color="red"
+        } else if (memberMobile.match(expMobile)) {
+            mobileWarning.innerHTML = ""
+        }
+    }
+    const member_domain = () => {
+        const domainSelect = document.getElementById("member-domain-select")
+        const domain = document.getElementById("member-domain")
+        domain.value = domainSelect.value
+        
+    }
+    function sample6_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var addr = ''; // 주소 변수
+                var extraAddr = ''; // 참고항목 변수
+
+                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr = data.jibunAddress;
+                }
+
+                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                if(data.userSelectedType === 'R'){
+                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있고, 공동주택일 경우 추가한다.
+                    if(data.buildingName !== '' && data.apartment === 'Y'){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                    if(extraAddr !== ''){
+                        extraAddr = ' (' + extraAddr + ')';
+                    }
+                    // 조합된 참고항목을 해당 필드에 넣는다.
+                    document.getElementById("sample6_extraAddress").value = extraAddr;
+                
+                } else {
+                    document.getElementById("sample6_extraAddress").value = '';
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('sample6_postcode').value = data.zonecode;
+                document.getElementById("sample6_address").value = addr;
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById("sample6_detailAddress").focus();
+            }
+        }).open();
+    }
+
+</script>
+</html>
