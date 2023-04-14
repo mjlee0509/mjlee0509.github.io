@@ -1,3 +1,73 @@
 a {
     text-decoration: none;
 }
+body {
+    background: url(../image/배경화면하단.jpg) no-repeat;
+    background-size: cover;
+}
+
+#index-container {
+    /* background: url("../image/배경화면하단.jpg") no-repeat;
+    background-size: cover; */
+
+}
+#index-header {
+    text-align: center;
+    height: 100px;
+    position: sticky;
+}
+
+#index-banner {
+    text-align: center;
+    position: sticky;
+    font-size: 50px;
+    color: rgb(0, 225, 255);
+    -webkit-text-stroke: 1px white;
+    font-family: "NeoDunggeunmoPro-Regular";
+    /* background: url("../image/배경화면하단.jpg") no-repeat ;
+    background-size: cover; */
+    width: 100vh;
+    height: 500px;
+    margin: 0 auto;
+    padding-top: 150px;
+    /* margin-top: 300px;
+    margin-bottom: 300px; */
+    
+}
+
+
+#index-button {
+    position: fixed;
+    margin-top: 100px;
+    margin: 0 auto;
+    position: sticky;
+}
+
+#index-signUp-button {
+    background-color: rgb(111, 0, 255);
+    border: solid 3px black;
+    color: white;
+    font-family: "NeoDunggeunmoPro-Regular";
+}
+
+#index-logIn-button {
+    background-color: rgb(255, 0, 222);
+    border: solid 3px black;
+    color: white;
+    font-family: "NeoDunggeunmoPro-Regular";
+}
+
+@font-face {
+    font-family: 'NeoDunggeunmoPro-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*둥근모(양식폰트)*/
+@font-face {
+    font-family: 'NeoDunggeunmo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.3/NeoDunggeunmo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

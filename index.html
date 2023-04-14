@@ -7,17 +7,26 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/backgroud.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="js/index.js" defer></script>
-    <!--
-        defer : body를 다 읽고 script로 넘어가라?
-    -->
 </head>
 <body>
-    <h2>HELLO WORLD!</h2>
-    <!--같은 수준(같은 위치)에 있는 파일은 이름만 써도 접근 가능-->
-    <button onclick="goSave()">회원가입</button>
-    <button onclick="goLogin()">로그인</button>
-    <button onclick="fun1()">함수호출</button>
+    <div id="index-header" class="haeder">
+    
+    </div>
+    <div class="container">
+        <div id="index-banner" class="col">
+            <div class="blinking"></div>
+            HELLO WORLD!
+        </div>
+        <br>
+        <div id="index-button" class="col-6 row g-1">
+            <input type="button" id="index-signUp-button" class="btn mb-0" value="회원가입" onclick="goSave()">
+            <input type="button" id="index-logIn-button" class="btn mb-0" value="로그인" onclick="goLogin()">
+            <input type="button" id="index-getFunc-button" class="btn mb-0" value="함수호출" onclick="fun1()">
+        </div>
+    </div>
 </body>
 <script>
     const goLogin = () => {
