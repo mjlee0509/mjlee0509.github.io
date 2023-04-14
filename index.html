@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js" defer></script>
+    <!--
+        defer : body를 다 읽고 script로 넘어가라?
+    -->
+</head>
+<body>
+    <h2>HELLO WORLD!</h2>
+    <!--같은 수준(같은 위치)에 있는 파일은 이름만 써도 접근 가능-->
+    <a href="save.html">회원가입</a>
+    <button onclick="goLogin()">로그인</button>
+    <button onclick="fun1()">함수호출</button>
+</body>
+<script>
+    const goLogin = () => {
+        location.href = "login.html"
+    }
+</script>
+</html>
