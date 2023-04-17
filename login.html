@@ -5,16 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인</title>
-    <link rel="stylesheet" href="./css/backgroud.css">
-
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="./js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <h2>로그인</h2>
-    <button onclick="goIndex()">인덱스</button>
+    <!-- <h2>로그인</h2>
+    <button onclick="goIndex()">인덱스</button> -->
+    <div id="main">
+        <div id="page-name">
+            <h2 id="page-name-text">로그인</h2>
+        </div>    
+        <div class="container mt-5">
+            <form action="/login" method="post">
+                <div class="form-floating mb-3">
+                    <input type="text" id="login-user-name" name="loginId" placeholder="ID를 입력하세요" class="form-control"
+                        onblur="login_button()"/>
+                    <label for="login-id" class="form-label">ID</label>
+                    <h6 id="login-id-warning"></h6>
+                </div>
+                <div class="form-floating">
+                    <input type="password" id="login-password" name="login_password" placeholder="비밀번호를 입력하세요"
+                        class="form-control" onblur="login_button()" />
+                    <label for="login-password" class="form-label">password</label>
+                    <h6 id="login-password-warning"></h6>
+                </div>
+                <div id="login-button" class="row">
+                    <input type="button" value="LOG-IN" class="btn text-white" onclick="login_button()">
+                </div>
+                <div id="footer">
+                    <a href="../member_form.html" style="text-decoration: none; color: gray;">회원가입 | </a>
+                    <a href="" onclick="none()" style="text-decoration: none; color: gray;">ID 찾기 | </a>
+                    <a href="" onclick="none()" style="text-decoration: none; color: gray;">비밀번호 찾기</a>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 <script>
     const goIndex = () => {
         history.back()
+    }
+
+    const none = () => {
+        alert("공사중......")
+    }
+
+    // const login_id = () => {
+    //     const loginId = document.getElementById("login-user-name").value        
+    // }
+
+    // const login_password = () => {
+    //     const loginPassword = document.getElementById("login-password").value        
+    // }
+
+    const login_button = () => {
+        const loginId = document.getElementById("login-user-name").value
+        console.log(loginId)
+        const loginPassword = document.getElementById("login-password").value
+        console.log(loginPassword)
+        if (loginId=="administrator#" && loginPassword=="aaaAAA5105!") {
+            location.href = "mypage.html"
+        } 
     }
 </script>
 </html>
