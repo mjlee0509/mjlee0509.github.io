@@ -1,0 +1,133 @@
+/*둥근고딕(제목폰트)*/
+@font-face {
+    font-family: 'NeoDunggeunmoPro-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*둥근모(양식폰트)*/
+@font-face {
+    font-family: 'NeoDunggeunmo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.3/NeoDunggeunmo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    font-family: 'NeoDunggeunmoPro-Regular';
+    margin: 0;
+    height: 1500px;
+}
+
+.header {
+    height: 300px;
+    padding: 100px; /* some padding */
+    text-align: center; /* center the text */
+    background: url(../image/715677.png); /* green background */
+    background-position: center center;
+    background-size: contain;
+    color: rgb(195, 0, 255); /* white text color */
+    text-shadow: -1px 0px white, 0px 1px white, 1px 0px white, 0px -1px white;
+
+}
+
+.header h1 {
+    margin: 0 auto;
+    font-size: 60px;
+}
+  
+/* Style the top navigation bar */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    height: 60px;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 22px 20px;
+    text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+    float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+    background-color: #cc9ce2;
+    color: black;
+}
+
+/* Ensure proper sizing */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Column container */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* Create two unequal columns that sits next to each other */
+  /* Sidebar/left column */
+  .side {
+    flex: 10%; /* Set the width of the sidebar */
+    background-color: #f1f1f1; /* Grey background color */
+    padding: 20px; /* Some padding */
+  }
+  
+  /* Main column */
+  .main {
+    flex: 70%; /* Set the width of the main content */
+    background-color: white; /* White background color */
+    padding: 20px; /* Some padding */
+  }
+
+  /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+    .row {
+      flex-direction: column;
+    }
+  }
+  
+  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+  @media screen and (max-width: 400px) {
+    .navbar a {
+      float: none;
+      width: 100%;
+    }
+  }
+
+  #about-me {
+    text-align: center;
+    font-size: 30px;
+  }
+
+  #photo-of-me {
+    margin-top: 30px;
+  }
+
+  #photo {
+    margin: 0 auto;
+    margin-top: 10px;
+    background: url(../image/photo_of_me.jpg);
+    background-position: center;
+    height: 300px;
+    background-size: cover;
+    width: 300px;
+  }
+
+  #introduction {
+    margin-top: 10px;
+    font-family:'NeoDunggeunmo';
+    text-align: center;
+  }

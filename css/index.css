@@ -4,7 +4,6 @@ a {
 body {
     background: url(../image/background_0417.jpg) no-repeat;
     background-size: cover;
-
 }
 
 
@@ -20,7 +19,6 @@ body {
     /* padding-top: 150px; */
     display: grid;
     place-items: center;
-
 }
 
 h1 {
@@ -88,7 +86,9 @@ h1 {
   }
 
 
-
+#index-container {
+    /* position: sticky; */
+}
 
 #index-button {
     position: fixed;
@@ -102,6 +102,8 @@ h1 {
     border: solid 3px black;
     color: white;
     font-family: "NeoDunggeunmoPro-Regular";
+    font-size: 24px;
+    position: sticky;
 }
 
 #index-logIn-button {
@@ -109,8 +111,10 @@ h1 {
     border: solid 3px black;
     color: white;
     font-family: "NeoDunggeunmoPro-Regular";
+    font-size: 24px;
 }
 
+/*둥근고딕(제목폰트)*/
 @font-face {
     font-family: 'NeoDunggeunmoPro-Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2') format('woff2');
