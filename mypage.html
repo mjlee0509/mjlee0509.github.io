@@ -9,39 +9,114 @@
     <script src="../js/bootstrap.bundle.min.js"></script> -->
     <link rel="stylesheet" href="../css/headers.css">
     <link rel="stylesheet" href="./css/mypage.css">
+    <link rel="stylesheet" href="./css/mypage_side.css">
+    <link rel="stylesheet" href="./css/mypage_main.css">
+    <script src="https://kit.fontawesome.com/d83d57aff4.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
+    <div>
     <div class="header">
-        <h1>WELCOME TO MY UNIVERSE</h1>
-        <p> - MJ.UNIVERSE -</p>
+        <h1 class="fa-fade">WELCOME TO MY PLANET</h1>
+        <p> - M.J.UNIVERSE -</p>
     </div>
     <div class="navbar">
         <a href="#">Link</a>
         <a href="#">Link</a>
         <a href="#">Link</a>
-        <a href="#" class="right">Link</a>
+        <a href="index.html" class="right">로그아웃</a>
     </div>
 
     <div class="row">
         <div class="side">
             <div id="profile">
-                <div id="about-me">
+                <div class="side-title">
                     ABOUT ME
                 </div>
-                <div id="photo-of-me">
-                    :: Photo of me :: 
+                <div class="side-text">
+                    :: Photo of Me :: 
                 </div>
-                <div id="photo" class="container"> </div>
-                <div id="introduction">
+                <div id="side-photo" class="container"> 
+                    <div class="overlay">
+                        <div class="overlay-text"> 
+                            <h3>주인장</h3> 
+                            <h6>───────────</h6>    
+                            <h6 class="introduction">#초보개발자 #java #javascript #CSS #MySQL #백엔드 #프론트엔드 #HelloWorld #MJUniverse</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="side-introduction">
                     "우주의 상상력은 언제나 인간의 상상력보다 더 넓게 남아있다."
                 </div>
             </div>
-        </div>
-        <div class="main">
 
+            <div id="side-contents">
+                <div class="side-title">MORE PLANET</div>
+                <div class="side-text">:: 더 많은 행성들을 탐험해보세요!</div>
+                <input type="button" class="btn" id="planet-1" value="지구" onclick="go_earth()"> <br>
+                <input type="button" class="btn" id="planet-2" value="달"> <br>
+                <input type="button" class="btn" id="planet-3" value="별"> <br>
+            </div>
+
+            <div id="contact-me">
+                <div class="title">CONTACT ME</div>
+                <div class="side-text">aaa</div>
+                <div class="side-text">aaa</div>
+                <div class="side-text">aaa</div>
+            </div>
         </div>
-    </div>
+
+        <div class="main">
+            <div id="main-recent" class="row">
+                <div class="main-photo-container">
+        
+                </div>
+                <div>
+                    <div class="main-recent-title">
+                        <h2>제목</h2>
+                    </div>
+                    <div class="main-recent-date">
+                        2023-04-18 15:21
+                    </div>
+                    <div class="main-recent-text">
+                        새 가지에 있는 그러므로 대고, 그것은 황금시대다.
+                        이 위하여서, 뼈 천하를 구하기 같지 그림자는 있는가? 방황하였으며, 않는 하였으며, 인도하겠다는 어디 끓는 그들의 같으며, 아름다우냐?
+                        가는 힘차게 고행을 그것은 우는 오아이스도 가슴이 이상은 우리 것이다. 갑 관현악이며, 우리의 미묘한 이것은 가장 우리는 무엇을 쓸쓸하랴?
+                        것이 오직 쓸쓸한 쓸쓸하랴? 피에 오아이스도 위하여 것은 듣는다. 인간의 설산에서 얼마나 것이다. 끝까지 보내는 품고 그들의 목숨이 새 칼이다.
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        </div>
 
 
 </body>
+<script>
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+const logout = () => {
+    location.href = "index.html"
+}
+
+const go_earth = () => {
+    window.location.href = "https://earth.google.com/web/@33.81671812,134.8422461,-13412.16386892a,11911110.03180742d,35y,-0h,0t,0r";
+}
+</script>
 </html>

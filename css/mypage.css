@@ -16,7 +16,7 @@
 
 
 body {
-    font-family: 'NeoDunggeunmoPro-Regular';
+    /* font-family: 'NeoDunggeunmoPro-Regular'; */
     margin: 0;
     height: 1500px;
 }
@@ -28,6 +28,7 @@ body {
     background: url(../image/715677.png); /* green background */
     background-position: center center;
     background-size: contain;
+    font-family: 'NeoDunggeunmoPro-Regular';
     color: rgb(195, 0, 255); /* white text color */
     text-shadow: -1px 0px white, 0px 1px white, 1px 0px white, 0px -1px white;
 
@@ -43,10 +44,15 @@ body {
     overflow: hidden;
     background-color: #333;
     height: 60px;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+
 }
 
 /* Style the navigation bar links */
 .navbar a {
+    font-family: 'NeoDunggeunmo';
     float: left;
     display: block;
     color: white;
@@ -58,6 +64,7 @@ body {
 /* Right-aligned link */
 .navbar a.right {
     float: right;
+    background-color: rgb(84, 0, 139);
 }
 
 /* Change color on hover */
@@ -66,6 +73,7 @@ body {
     color: black;
 }
 
+  /* 2. 컨텐츠 박스*/
 /* Ensure proper sizing */
 * {
     box-sizing: border-box;
@@ -105,29 +113,4 @@ body {
       float: none;
       width: 100%;
     }
-  }
-
-  #about-me {
-    text-align: center;
-    font-size: 30px;
-  }
-
-  #photo-of-me {
-    margin-top: 30px;
-  }
-
-  #photo {
-    margin: 0 auto;
-    margin-top: 10px;
-    background: url(../image/photo_of_me.jpg);
-    background-position: center;
-    height: 300px;
-    background-size: cover;
-    width: 300px;
-  }
-
-  #introduction {
-    margin-top: 10px;
-    font-family:'NeoDunggeunmo';
-    text-align: center;
   }

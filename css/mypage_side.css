@@ -1,0 +1,127 @@
+#side-contents {
+    margin-top: 50px;
+  }
+
+  .side-title {
+    font-family: 'NeoDunggeunmoPro-Regular';
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .side-text {
+    font-family:'NeoDunggeunmo';
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  .side-introduction {
+    margin-top: 10px;
+    font-family:'NeoDunggeunmo';
+    text-align: center;
+  }
+
+  #side-photo {
+    margin: 0 auto;
+    margin-top: 10px;
+    background: url(../image/photo_of_me.jpg);
+    background-position: center;
+    height: 300px;
+    background-size: cover;
+    width: 300px;
+    border-radius: 10px;
+    position: relative;
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    height:0;
+    transition: .5s ease;
+  }
+  
+  #side-photo:hover .overlay {
+    bottom: 0;
+    height: 100%;
+  }
+
+  .overlay-text {
+    font-family:'NeoDunggeunmo';
+    color: rgb(0, 255, 0);
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+
+  #more-planet {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 30px;
+    font-family: 'NeoDunggeunmoPro-Regular';
+  }
+
+  #more-planet-text {
+    font-family: 'NeoDunggeunmo';
+    margin-top: 20px;
+  }
+
+  .btn {
+    font-family: 'NeoDunggeunmo';
+    font-size: 18px;
+    text-align: left;
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    border: solid 0.5px gray;
+    margin: 1px;
+  }
+
+  #planet-1 {
+    background: url(../image/earth.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+  }
+
+  #planet-2 {
+    background: url(../image/planet3.jpg);
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  #planet-3 {
+    background: url(../image/planet2.jpg);
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+
+  #contact-me{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 30px;
+    font-family: 'NeoDunggeunmoPro-Regular';
+  }
+
+
+  .btn:hover {
+    border: 3px solid rgba(238, 182, 255, 0.7);
+    }
+
+    i {
+        font-family: 'NeoDunggeunmo';
+    }
