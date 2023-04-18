@@ -1,0 +1,18 @@
+.footer {
+    font-family: 'NeoDunggeunmo';
+    padding: 20px; /* Some padding */
+    text-align: center; /* Center text*/
+    background: #000000; /* Grey background */
+    color: white;
+    height: 100%;
+  }
+
+h2 {
+    font-family: 'NeoDunggeunmo';
+    font-size: 30px;
+}
+
+h6 {
+    font-family: 'NeoDunggeunmoPro-Regular';
+    font-size: 12px;
+}

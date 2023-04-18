@@ -11,19 +11,21 @@
     <link rel="stylesheet" href="./css/mypage.css">
     <link rel="stylesheet" href="./css/mypage_side.css">
     <link rel="stylesheet" href="./css/mypage_main.css">
+    <link rel="stylesheet" href="./css/mypage_footer.css">
     <script src="https://kit.fontawesome.com/d83d57aff4.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
-    <div>
     <div class="header">
         <h1 class="fa-fade">WELCOME TO MY PLANET</h1>
-        <p> - M.J.UNIVERSE -</p>
+        <p> M.J.UNIVERSE </p>
     </div>
     <div class="navbar">
-        <a href="#">Link</a>
-        <a href="#">Link</a>
-        <a href="#">Link</a>
+        <a href="#"><i class="fa fa-bars"></i></a>
+        <a href="#"><i class="fa fa-home"></i></a>
+        <a href="#"><i class="fa fa-earth"></i></a>
+        <a href="#"><i class="fa fa-moon"></i></a>
+        <a href="#"><i class="fa fa-star"></i></a>
         <a href="index.html" class="right">로그아웃</a>
     </div>
 
@@ -34,14 +36,15 @@
                     ABOUT ME
                 </div>
                 <div class="side-text">
-                    :: Photo of Me :: 
+                    :: Photo of Me ::
                 </div>
-                <div id="side-photo" class="container"> 
+                <div id="side-photo" class="container">
                     <div class="overlay">
-                        <div class="overlay-text"> 
-                            <h3>주인장</h3> 
-                            <h6>───────────</h6>    
-                            <h6 class="introduction">#초보개발자 #java #javascript #CSS #MySQL #백엔드 #프론트엔드 #HelloWorld #MJUniverse</h6>
+                        <div class="overlay-text">
+                            <h3>주인장</h3>
+                            <h6>───────────</h6>
+                            <h6 class="introduction">#초보개발자 #java #javascript #CSS #MySQL #백엔드 #프론트엔드 #HelloWorld
+                                #MJUniverse</h6>
                         </div>
                     </div>
                 </div>
@@ -53,23 +56,31 @@
             <div id="side-contents">
                 <div class="side-title">MORE PLANET</div>
                 <div class="side-text">:: 더 많은 행성들을 탐험해보세요!</div>
-                <input type="button" class="btn" id="planet-1" value="지구" onclick="go_earth()"> <br>
-                <input type="button" class="btn" id="planet-2" value="달"> <br>
-                <input type="button" class="btn" id="planet-3" value="별"> <br>
+                <input type="button" class="btn" id="planet-1" value="지구" onclick="none()"> <br>
+                <input type="button" class="btn" id="planet-2" value="달" onclick="none()"> <br>
+                <input type="button" class="btn" id="planet-3" value="깐따삐아" onclick="none()"> <br>
             </div>
 
             <div id="contact-me">
-                <div class="title">CONTACT ME</div>
-                <div class="side-text">aaa</div>
-                <div class="side-text">aaa</div>
-                <div class="side-text">aaa</div>
+                <div class="side-title">CONTACT ME</div>
+                <div class="contact-me-icon">
+                    <a href="" id="google-icon" style="text-decoration: none;" target="_blank"><i
+                            class="fa-brands fa-facebook"></i> | </a>
+                    <a href="" id="google-icon" style="text-decoration: none;" target="_blank"><i
+                            class="fa-brands fa-instagram"></i> | </a>
+                    <a href="" id="google-icon" style="text-decoration: none;" target="_blank"><i
+                            class="fa-brands fa-google"></i> | </a>
+                    <a href="https://github.com/mjlee0509" id="github-icon" style="text-decoration: none;"
+                        target="_blank"><i class="fa-brands fa-github-alt"></i> | </a>
+                    <a href="https://blog.naver.com/dalbamnote" id="blog-icon" style="text-decoration: none;"
+                        target="_blank"><i class="fa-solid fa-blog"></i></a>
+                </div>
             </div>
         </div>
-
         <div class="main">
             <div id="main-recent" class="row">
                 <div class="main-photo-container">
-        
+
                 </div>
                 <div>
                     <div class="main-recent-title">
@@ -86,9 +97,16 @@
                     </div>
                 </div>
             </div>
-        
         </div>
-        </div>
+    </div>
+    <div class="footer">
+        <h2>MJ UNIVERSE</h2>
+        <h2>──────</h2>
+        <h6>우리은하 지구 아시아 대한민국 인천광역시 어딘가</h6>
+        <h6>Designed by : mjlee0509</h6>
+        <h6>개발자 연락처 : 010-5***-***7</h6>
+    </div>
+
 
 
 </body>
@@ -115,8 +133,8 @@ const logout = () => {
     location.href = "index.html"
 }
 
-const go_earth = () => {
-    window.location.href = "https://earth.google.com/web/@33.81671812,134.8422461,-13412.16386892a,11911110.03180742d,35y,-0h,0t,0r";
+const none = () => {
+    alert("Comming Soon ...... ")
 }
 </script>
 </html>

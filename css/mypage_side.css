@@ -9,6 +9,7 @@
   }
 
   .side-text {
+    text-align: center;
     font-family:'NeoDunggeunmo';
     margin-top: 30px;
     margin-bottom: 10px;
@@ -23,7 +24,7 @@
   #side-photo {
     margin: 0 auto;
     margin-top: 10px;
-    background: url(../image/photo_of_me.jpg);
+    background: url(../image/backgroun_0417_ver.03.png);
     background-position: center;
     height: 300px;
     background-size: cover;
@@ -84,11 +85,11 @@
     height: 50px;
     border-radius: 10px;
     border: solid 0.5px gray;
-    margin: 1px;
+    margin: 0 auto;
   }
 
   #planet-1 {
-    background: url(../image/earth.jpg);
+    background: url(../image/earth.png);
     background-position: right;
     background-repeat: no-repeat;
     background-size: contain;
@@ -111,12 +112,19 @@
   }
 
   #contact-me{
-    text-align: center;
     margin-top: 50px;
-    font-size: 30px;
-    font-family: 'NeoDunggeunmoPro-Regular';
   }
 
+  .contact-me-icon {
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: center;
+
+  }
+
+  #google-icon {
+    
+  }
 
   .btn:hover {
     border: 3px solid rgba(238, 182, 255, 0.7);
@@ -124,4 +132,13 @@
 
     i {
         font-family: 'NeoDunggeunmo';
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    a:hover {
+      color: purple;
     }
